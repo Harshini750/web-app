@@ -47,7 +47,8 @@ def predict():
     except FormValidationError as e:
         flash(str(e))
         return redirect(url_for("appview.prediction"))
-    except:
+    except Exception as e:
+        print(e)
         print(traceback.format_exc())
         flash("Something went wrong. Could not make prediction.")
         return redirect(url_for("appview.prediction"))

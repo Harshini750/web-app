@@ -8,8 +8,11 @@ class PredictionController:
         self._form_data = form_data
 
     def __value_predictor(self, to_predict_list, size):
-        # TODO
-        return False
+        print(to_predict_list)
+        loaded_model = joblib.load(r'C:\MAMP\htdocs\soney\dev\hello\flask_app\env\modelxg.pkl')
+        result = loaded_model.predict(to_predict)
+        return result[0]
+        
     
     def predict(self) -> bool:
         to_predict_list = list(self._form_data.values())
