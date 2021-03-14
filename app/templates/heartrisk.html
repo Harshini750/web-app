@@ -8,12 +8,27 @@
     font-size: 20px;
     border-radius: 5px;
   }
+  .prediction-result {
+    height: 50px;
+    width: 100%;
+    padding: 0 0;
+  }
 </style>
 {% endblock %} 
 {% block main %}
 <div class="questionnaire-form">
   <!--Prediction Result-->
-  <div class="container" style="height: 50px">{% if result %} {% endif %}</div>
+  <div class="prediction-result">
+    {% if result is defined %} 
+    <div class="alert alert-primary" role="alert">
+      {% if result == 0 %}
+      <span class="text-success">The patient is not likely to have a heart disease.</span>
+      {% else %}
+      <span class="text-danger">The patient is likely to have a heart disease.</span>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
   {% with messages = get_flashed_messages() %}
     {% if messages %}
         <div class="alert alert-danger text-center" style="width: 100%;">
@@ -39,10 +54,10 @@
           </div>
           <div class="col-sm-3">
             <label for="gender">Gender</label>
-            <select class="form-control" id="gender" name="Gender" required>
+            <select class="form-control" id="gender" name="gender" required>
               <option disabled selected value>-- Select an Option --</option>
-              <option value="1">Women</option>
-              <option value="2">Men</option>
+              <option value="1">Female</option>
+              <option value="2">Male</option>
             </select>
           </div>
           <div class="col-sm-3">
@@ -73,7 +88,7 @@
               type="number"
               class="form-control"
               id="sysbp"
-              name="systolicbp"
+              name="systolic_bp"
               required
             />
           </div>
@@ -83,7 +98,7 @@
               type="number"
               class="form-control"
               id="diasbp"
-              name="diastolicbp"
+              name="diastolic_bp"
               required
             />
           </div>
@@ -91,7 +106,7 @@
         <div class="form-group row">
           <div class="col-sm">
             <label for="chol">Serum Cholesterol in mg/dl</label>
-            <select class="form-control" id="chole" name="Cholestoral" required>
+            <select class="form-control" id="chole" name="cholesterol_level" required>
               <option disabled selected value>-- Select an Option --</option>
               <option value="1">Normal</option>
               <option value="2">Above normal</option>
@@ -100,7 +115,7 @@
           </div>
           <div class="col-sm">
             <label for="glucose">Blood Glucose</label>
-            <select class="form-control" id="glu" name="glucose" required>
+            <select class="form-control" id="glu" name="blood_glucose_level" required>
               <option disabled selected value>-- Select an Option --</option>
               <option value="1">Normal</option>
               <option value="2">Above normal</option>
@@ -114,7 +129,7 @@
       <div class="form-group row">
         <div class="col-sm">
           <label for="smoking">Smoking </label>
-          <select class="form-control" id="smoking" name="Smoking" required>
+          <select class="form-control" id="smoking" name="smoking" required>
             <option disabled selected value>-- Select an Option --</option>
             <option value="0">No</option>
             <option value="1">Yes</option>
@@ -122,7 +137,7 @@
         </div>
         <div class="col-sm">
           <label for="alcohol">Alcohol </label>
-          <select class="form-control" id="alcohol" name="Alcohol" required>
+          <select class="form-control" id="alcohol" name="alcohol" required>
             <option disabled selected value>-- Select an Option --</option>
             <option value="0">No</option>
             <option value="1">Yes</option>
@@ -133,7 +148,7 @@
           <select
             class="form-control"
             id="physactiv"
-            name="Physicalactivity"
+            name="physical_activity"
             required
           >
             <option disabled selected value>-- Select an Option --</option>
