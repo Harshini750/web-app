@@ -1,0 +1,152 @@
+{% extends "base.html" %} {% block custom_style %}
+<style>
+  .questionnaire-form {
+    margin-top: 10%;
+  }
+  .btn-xl {
+    padding: 5px 25px;
+    font-size: 20px;
+    border-radius: 5px;
+  }
+</style>
+{% endblock %} 
+{% block main %}
+<div class="questionnaire-form">
+  <!--Prediction Result-->
+  <div class="container" style="height: 50px">{% if result %} {% endif %}</div>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="alert alert-danger text-center" style="width: 100%;">
+            {{ messages[0] }}
+        </div>
+    {% endif %}
+  {% endwith %}
+  <form action="#" method="POST">
+    <fieldset>
+      <legend>Heart Disease Risk Questionnaire</legend>
+      <br />
+      <div class="card card-body">
+        <div class="form-group row">
+          <div class="col-sm-3">
+            <label for="age">Age(years)</label>
+            <input
+              type="number"
+              class="form-control"
+              id="age"
+              name="age"
+              required
+            />
+          </div>
+          <div class="col-sm-3">
+            <label for="gender">Gender</label>
+            <select class="form-control" id="gender" name="Gender" required>
+              <option disabled selected value>-- Select an Option --</option>
+              <option value="1">Women</option>
+              <option value="2">Men</option>
+            </select>
+          </div>
+          <div class="col-sm-3">
+            <label for="weight">Weight in Kg</label>
+            <input
+              type="number"
+              class="form-control"
+              id="wt"
+              name="weight"
+              required
+            />
+          </div>
+          <div class="col-sm-3">
+            <label for="height">Height in cm </label>
+            <input
+              type="number"
+              class="form-control"
+              id="ht"
+              name="height"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm">
+            <label for="sysbp">Systolic Blood Pressure in mm Hg</label>
+            <input
+              type="number"
+              class="form-control"
+              id="sysbp"
+              name="systolicbp"
+              required
+            />
+          </div>
+          <div class="col-sm">
+            <label for="diasbp">Diastolic Blood Pressure in mm Hg</label>
+            <input
+              type="number"
+              class="form-control"
+              id="diasbp"
+              name="diastolicbp"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm">
+            <label for="chol">Serum Cholesterol in mg/dl</label>
+            <select class="form-control" id="chole" name="Cholestoral" required>
+              <option disabled selected value>-- Select an Option --</option>
+              <option value="1">Normal</option>
+              <option value="2">Above normal</option>
+              <option value="3">Well above normal</option>
+            </select>
+          </div>
+          <div class="col-sm">
+            <label for="glucose">Blood Glucose</label>
+            <select class="form-control" id="glu" name="glucose" required>
+              <option disabled selected value>-- Select an Option --</option>
+              <option value="1">Normal</option>
+              <option value="2">Above normal</option>
+              <option value="3">Well above normal</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <div class="form-group row">
+        <div class="col-sm">
+          <label for="smoking">Smoking </label>
+          <select class="form-control" id="smoking" name="Smoking" required>
+            <option disabled selected value>-- Select an Option --</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select>
+        </div>
+        <div class="col-sm">
+          <label for="alcohol">Alcohol </label>
+          <select class="form-control" id="alcohol" name="Alcohol" required>
+            <option disabled selected value>-- Select an Option --</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select>
+        </div>
+        <div class="col-sm">
+          <label for="physactiv">Physical Activity</label>
+          <select
+            class="form-control"
+            id="physactiv"
+            name="Physicalactivity"
+            required
+          >
+            <option disabled selected value>-- Select an Option --</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input class="btn btn-primary btn-xl" type="submit" value="Predict" />
+      </div>
+    </fieldset>
+  </form>
+</div>
+{% endblock %}
