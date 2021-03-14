@@ -1,5 +1,8 @@
+import os
+import joblib
+
 from exceptions import FormValidationError
-from config import constants
+from config import constants, Config
 from models.user import User
 from models.medicalrecord import MedicalRecord
 
@@ -9,8 +12,8 @@ class PredictionController:
 
     def __value_predictor(self, to_predict_list, size):
         print(to_predict_list)
-        loaded_model = joblib.load(r'C:\MAMP\htdocs\soney\dev\hello\flask_app\env\modelxg.pkl')
-        result = loaded_model.predict(to_predict)
+        loaded_model = joblib.load(os.path.join(Config.BASE_DIR, "app", "models", "model9.pkl"))
+        result = loaded_model.predict([to_predict_list])
         return result[0]
         
     
