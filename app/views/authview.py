@@ -33,10 +33,10 @@ def login_verify():
         user = User.query.filter_by(email=email).first()
         if not user:
             raise FormValidationError("Incorrect username or password")
-       
+
         if Password.verify_password(passw, user.password):
             login_user(user, remember=True, duration=timedelta(days=7))
-            UserHistory.create(user=user,login_time=datetime.utcnow())
+            UserHistory.create(user=user, login_time=datetime.utcnow())
             return redirect(url_for("appview.index"))
         else:
             raise FormValidationError("Incorrect username or password")
@@ -68,7 +68,7 @@ def signup():
             name=full_name, email=email, password=Password.gen_hash(passw)
         ).save()
         login_user(user)
-        UserHistory.create(user=user,login_time=datetime.utcnow())
+        UserHistory.create(user=user, login_time=datetime.utcnow())
         return redirect(url_for("appview.prediction"))
     except FormValidationError as e:
         flash(str(e))
@@ -82,8 +82,13 @@ def signup():
 @authview.route("/logout")
 @login_required
 def logout():
-    userhistory = UserHistory.query.filter_by(user=current_user)
-    userhistory.logout_time = datetime.utcnow()
-    userhistory.save()
+    userhistory = (
+        UserHistory.query.filter_by(user=current_user)
+        .order_by(UserHistory.login_time.desc())
+        .first()
+    )
+    if userhistory:
+        userhistory.logout_time = datetime.utcnow()
+        userhistory.save()
     logout_user()
     return redirect(url_for("appview.index"))
