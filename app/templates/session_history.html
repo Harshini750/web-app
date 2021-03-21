@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Cardio Predict | Session History{% endblock %}
+{% block custom_style %}
+<style>
+  .main-container {
+    margin-top: 10%;
+    margin-bottom: auto;
+  }
+  table, th, td {
+    border: 1px solid black;
+    padding: 5px 10px;
+  }
+</style>
+{% endblock %} 
+
+{% block main %}
+<div class="container main-container">
+<table>
+    <tr>
+        <td>S. No</td>
+        <td>Login Time</td>
+        <td>Logout Time</td>
+    </tr>
+    {% for session in sessions %}
+    <tr>
+        <td>{{loop.index}}</td>
+        <td>{{session.login_time.strftime("%H:%M %d-%m-%Y")}}</td>
+        {% if session.logout_time %}
+        <td>{{session.logout_time.strftime("%H:%M %d-%m-%Y")}}</td>
+        {% else %}
+        <td>NA</td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

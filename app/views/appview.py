@@ -5,6 +5,7 @@ from werkzeug.utils import redirect
 
 from controllers.predictioncontroller import PredictionController
 from exceptions import FormValidationError
+from models.userhistory import UserHistory
 
 appview = Blueprint("appview", __name__)
 
@@ -73,3 +74,14 @@ def predict():
         print(traceback.format_exc())
         flash("Something went wrong. Could not make prediction.")
         return redirect(url_for("appview.prediction"))
+
+@appview.route("/session-history")
+def session_history():
+    try:
+        user_history = UserHistory.query.filter_by(user=current_user).all()
+        # import pdb
+        # pdb.set_trace()
+        print(user_history)
+        return render_template("session_history.html", sessions=user_history)
+    except:
+        print(traceback.format_exc())
