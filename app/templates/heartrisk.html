@@ -2,7 +2,7 @@
 {% block title %}Cardio Predict | Prediction{% endblock %}
 <style>
   .questionnaire-form {
-    margin-top: 10%;
+    margin-top: 5%;
   }
   .btn-xl {
     padding: 5px 25px;
@@ -14,29 +14,16 @@
     width: 100%;
     padding: 0 0;
   }
+  
 </style>
 {% endblock %} 
 {% block main %}
 <div class="questionnaire-form">
   <!--Prediction Result-->
-  <div class="prediction-result">
-    {% if result is defined %} 
-    <div class="alert alert-primary" role="alert">
-      {% if result == 0 %}
-      <span class="text-success">The patient is not likely to have a heart disease.</span>
-      {% else %}
-      <span class="text-danger">The patient is likely to have a heart disease.</span>
-      {% endif %}
-    </div>
-    {% endif %}
+  <div class="alert alert-warning">
+    <strong>Warning!</strong> This is just a prediction and does not indicate your accurate heart disease risk.
   </div>
-  {% with messages = get_flashed_messages() %}
-    {% if messages %}
-        <div class="alert alert-danger text-center" style="width: 100%;">
-            {{ messages[0] }}
-        </div>
-    {% endif %}
-  {% endwith %}
+  
   <form action="#" method="POST">
     <fieldset>
       <legend>Heart Disease Risk Questionnaire</legend>
@@ -165,4 +152,22 @@
     </fieldset>
   </form>
 </div>
+<div class="prediction-result">
+    {% if result is defined %} 
+    <div class="alert alert-primary" role="alert">
+      {% if result == 0 %}
+      <span class="text-success">The patient is not likely to have a heart disease.</span>
+      {% else %}
+      <span class="alert alert-danger">The patient is likely to have a heart disease.</span>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="alert alert-danger text-center" style="width: 100%;">
+            {{ messages[0] }}
+        </div>
+    {% endif %}
+  {% endwith %}
 {% endblock %}

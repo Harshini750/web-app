@@ -26,7 +26,7 @@ class PredictionController:
         else:
             print(self._form_data)
             raise FormValidationError("Incorrect number of fields received")
-        
+        self.result=result
         return result
 
     def save_to_db(self, user:User):
@@ -46,6 +46,7 @@ class PredictionController:
 
         _record = MedicalRecord(**_data)
         _record.user = user
+        _record.result = constants.RESULT[self.result]
         _record.save()
         
         return _record

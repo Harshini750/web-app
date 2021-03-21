@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>Heart disease risk prediction</title>
+  <link
+      rel="icon"
+      href="{{ url_for('static', filename='img/favicon.ico') }}"
+    />
+	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+	 <link
+      href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}"
+      rel="stylesheet"
+    />
+    
+	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+	 <!-- Vendor CSS Files -->
+  
+   <link
+      href="{{ url_for('static', filename='css/bootstrap-icons.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}"
+      rel="stylesheet"
+    />
+
+  <!-- Template Main CSS File -->
+   <link
+      href="{{ url_for('static', filename='css/style.css') }}"
+      rel="stylesheet"
+    />
+
+	<!-- <link  href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+       <a href="aboutus" class="logo"> 
+      	<img
+               src="{{ url_for('static', filename='img/logo22.png') }}"
+            />
+      </a>
+     <!-- <h1 class="logo"><a href="home.html">CardioPredict <span> </span></a></h1> -->
+      
+      
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link" href="home">HOME</a></li>
+          
+          <li><a class="nav-link" href="login">REGISTER</a></li>
+          <li><a class="nav-link" href="aboutus">ABOUT US</a></li>
+
+        </ul>
+        
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="head" class="d-flex align-items-center">
+    <div class="container"> 
+
+      
+      <h2> Heart Disease Risk </h2>
+      <h1>Welcome to <span>CardioPredict</span></h1>
+      <h2> Making predictions towards a Healthier Lifestyle </h3>
+        <div class="st">
+         <button type="button" class="btn btn-primary"><a href=
+          "aboutus" id="bu" style="color:black" >
+      Get Started
+           </a></button>
+         </div>
+    <!-- <button><a href="aboutus" style="color:black" >
+      Get Started
+    </a></button> -->
+		
+      
+    </div>
+  </section><!-- End Hero -->
+   <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+
+    
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>CardioPredict.com™.</span></strong>
+      </div>
+      
+    
+  </footer><!-- End Footer -->
+	
+</body>
+</html>

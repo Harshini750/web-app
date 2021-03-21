@@ -14,12 +14,12 @@
       rel="icon"
       href="{{ url_for('static', filename='img/favicon.ico') }}"
     />
-
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
     <title>{% block title %}Default{% endblock %}</title>
 
     <link
       rel="canonical"
-      href="https://getbootstrap.com/docs/4.1/examples/sticky-footer-navbar/"
+      href="#"
     />
 
     <!-- Bootstrap core CSS -->
@@ -41,11 +41,36 @@
   <body cz-shortcut-listen="true">
     <header>
       <!-- Fixed navbar -->
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark  py-0">
+        <a class="navbar-brand" 
+        href="#">
+        
+        	<img class="nav-logo"
+        	 style="height:80px ; border-radius:50%"
+        	src="{{ url_for('static', filename='img/logo22.png') }}" />
+            
+        </a>
         <a
-          class="navbar-brand"
-          href="https://getbootstrap.com/docs/4.1/examples/sticky-footer-navbar/#"
-          >{{page_header}} |</a
+          class="navbar-nav w-100"
+          href="#"
+          ></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+         
+
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a
+          class="navbar-brand "
+          href="home"
+          >HOME</a
         >
         <button
           class="navbar-toggler"
@@ -58,16 +83,28 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+
+        <a
+          class="navbar-brand " 
+          href="aboutus"
+          >ABOUT</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             {% if current_user.is_authenticated %}
-            <li class="nav-item active">
-              <a
-                class="nav-link"
-                href="https://getbootstrap.com/docs/4.1/examples/sticky-footer-navbar/#"
-                >Prediction <span class="sr-only">(current)</span></a
-              >
-            </li>
+            
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -81,7 +118,7 @@
                 Profile
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Change Password</a>
+                <a class="dropdown-item" href="#">User History</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ url_for('authview.logout') }}"
                   >Logout</a

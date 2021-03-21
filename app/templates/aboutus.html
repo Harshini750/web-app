@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Cardiopredict</title>
+  <link
+      rel="icon"
+      href="{{ url_for('static', filename='img/favicon.ico') }}"
+    />
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Dosis"rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+   <!--  <link
+      href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+      rel="stylesheet"
+    /> -->
+    <link
+      href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}"
+      rel="stylesheet"
+    />
+  <!-- <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link
+      href="{{ url_for('static', filename='css/bootstrap-icons.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}"
+      rel="stylesheet"
+    />
+  <!-- <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> -->
+ 
+
+  <!-- Template Main CSS File -->
+   <link
+      href="{{ url_for('static', filename='css/style.css') }}"
+      rel="stylesheet"
+    />
+
+ 
+</head>
+
+<body>
+
+ 
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="home.html" class="logo"> 
+      	<img
+               src="{{ url_for('static', filename='img/logo22.png') }}"
+            />
+      </a>
+      <!-- <h1 class="logo"><a href="home.html">CardioPredict <span> </span></a></h1> -->
+      
+      
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link" href="home">HOME</a></li>
+          
+          <li><a class="nav-link" href="login">REGISTER</a></li>
+          <li><a class="nav-link" href="#contact">ABOUT US</a></li>
+
+        </ul>
+        
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+ <!-- He Section -->
+  <section id="he" class="d-flex align-items-center">
+    <div class="container"> 
+      <h1>Welcome to <span>CardioPredict</span></h1>
+      <h2> Stay informed and reduce heart disease risk </h2> 
+      
+    </div>
+  </section><!-- End He  -->
+
+  <main id="main">
+
+    <!-- Featured Section -->
+    <section id="featured" class="featured">
+      <div class="container">
+       <div class="alert alert-info">
+       <strong>Attention!<br> This prediction model uses Gradient boosting algorithm to predict heart disease risk <br> This has accuracy and precision of 74% and is prone to error <br>
+       	This is just a prediction and does not indicate your accurate heart disease risk <br> Please seek medical help to know your exact heart health status </strong> 
+       </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              
+               
+              <h4 class="title"><a href="">What is the benefit to know the status your heart?</a></h4>
+              <p class="description">Heart is your valuable organ. It pumps blood to allover your body relentlessly.<br>If you know your heart condition, you can act accordingly to keep your heart safe and sound.<br>
+                   So act early and act wisely.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" >
+              
+              <h4 class="title"><a href="">Controllable risk factors</a></h4>
+              <p class="description"> Smoking <br> High blood sugar <br> High blood pressure <br> high cholesterol <br> Poor diet <br> 
+              Stress <br> Obesity <br>
+              Physical inactivity
+               </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" >
+              
+              <h4 class="title"><a href="">Uncontrollable risk factors</a></h4>
+              <p class="description"> Age <br> Race <br> Gender<br> Family history </p>
+               </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              
+              <h4 class="title"><a href="">Strategies to prevent heart disease</a></h4>
+              <p class="description"> Don't smoke or use tobacco <br> Exercise regularly<br> Eat a heart-healthy diet<br> Maintain healthy weight  <br> Get a good quality sleep <br> Manage stress <br> Get regular health screenings <br> Control other health conditions such as high BP,high cholesterol and diabetes</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Featured Section -->
+
+    
+
+    <!-- FAQ Section  -->
+    <section id="faq" class="faq section-bg">
+      <div class="container" >
+
+        <div class="section-title">
+          <h2>F.A.Q</h2>
+          <h3>Frequently Asked Questions </h3>
+          <p>Do you want to know more about heart disease?</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-xl-10">
+            <ul class="faq-list">
+
+              <li>
+                <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">What is Heart Disease Risk Prediction? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                    Heart Risk prediction is a way to find out your risk of heart disease<br>
+              You can predict how likely you are to have a heart disease.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">Which foods are good for heart health? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                   Fruits <br> Soy <br> Green veggies<br> Legumes<br> Seeds <br> Oats<br> Omega 3 rich foods<br> Nuts and Berries.
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">What are early warning signs of heart disease? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                    Chest discomfort<br>
+                    Nausea,Indigestion,Heartburn<br>
+                    Feeling of dizziness <br>
+                    Getting exhausted easily <br>
+                    Puffy legs and feet <br>
+                    Shortness of breath <br>
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">When to see a doctor? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                   Seek immediate help if you have these signs and symptoms <br>
+                   Chest pain<br>
+                   Shortness of breath<br>
+                   Fainting
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">Can Heart disease be cured? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                    Heart disease can't be cured but it can get better when treated and managed
+                  </p>
+                </div>
+              </li>
+
+              <li>
+                <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">How much exercise do I need for healthy heart? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                <div id="faq6" class="collapse" data-bs-parent=".faq-list">
+                  <p>
+                    Atleast 30 minutes a day five times a week <br>
+
+                    Exercises that boost heart health are : Aerobic exercise <br> Resistance training <br> Stretching,Flexibility and Balance <br> 
+                  </p>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <h3><span>Contact Us</span></h3>
+          <p>CardioPredict@xyz.com.</p>
+        </div>
+
+                
+
+         
+
+        
+
+          
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!--  Footer-->
+  <footer id="footer">
+
+
+    
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>CardioPredict.com™. </span></strong>
+      </div>
+      
+    
+  </footer><!-- End Footer -->
+
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script 
+    src="{{ url_for('static', filename='/vendor/bootstrap/js/bootstrap.bundle.min.js') }}">
+  </script>
+  <!-- <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+  <!-- Template Main JS File -->
+  <script 
+    src="{{ url_for('static', filename='js/main.js') }}">
+  </script>
+   <!-- <link
+      href="{{ url_for('static', filename='js/main.js') }}"
+      rel="javascript"
+    /> -->
+  <!-- <script src="assets/js/main.js"></script> -->
+</div>
+
+</body>
+
+</html> 

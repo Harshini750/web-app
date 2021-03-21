@@ -20,6 +20,8 @@ def create_app():
     # Views
     app.register_blueprint(appview)
     app.register_blueprint(authview)
+    
+    
 
     @login_manager.user_loader
     def load_user(user_id):

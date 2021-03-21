@@ -14,8 +14,29 @@ def index():
     if current_user.is_authenticated:
         return redirect(url_for("appview.prediction"))
     else:
-        return redirect(url_for("authview.login_page"))
-
+    	return render_template(
+        "home.html"
+    )
+        # return redirect(url_for("authview.login_page"))
+@appview.route("/home")      
+def home():
+    return render_template(
+        "home.html"
+    )
+@appview.route("/aboutus")
+def aboutus():
+    return render_template(
+        "aboutus.html",
+        title="Cardio Predict | Prediction",
+        page_header="Cardio Predict",
+    )
+@appview.route("/getstarted")
+def getstarted():
+    return render_template(
+        "aboutus.html",
+        title="Cardio Predict | Prediction",
+        page_header="Cardio Predict",
+    )
 
 @appview.route("/predict")
 @login_required

@@ -13,3 +13,7 @@ LEVELS = {
     "2": "above_normal",
     "3": "well_above_normal",
 }
+RESULT = {
+     0: "The patient is not likely to have a heart disease",
+     1: "The patient is  likely to have a heart disease"
+}
