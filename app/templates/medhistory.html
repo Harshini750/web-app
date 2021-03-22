@@ -1,22 +1,22 @@
 {% extends "base.html" %}
-{% block title %}Cardio Predict | Session History{% endblock %}
+{% block title %}Cardio Predict | Medical History{% endblock %}
 {% block custom_style %}
 <style>
   .main-container {
     margin-top: 10%;
     margin-bottom: auto;
   }
-  /*table, th, td {
+ /* table, th, td {
     border: 1px solid black;
     padding: 5px 10px;
   }*/
 
   .styled-table {
     border-collapse: collapse;
-    margin: 10px 0;
+    margin: 1px 0;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width:200px;
+    min-width: 200px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 .styled-table  tr {
@@ -24,26 +24,26 @@
     color:black;
     text-align: left;
 }
-.styled-table  th {
+.styled-table th{
     background-color:orange;
     color:black;
     text-align: left;
-    padding: 7px 7px;
-
+     padding: 7px 7px;
 }
-
 .styled-table td {
     padding: 7px 7px;
-     background-color:gray
+    background-color:gray
 }
 .styled-table tbody tr {
     border-bottom: 1px solid #dddddd;
 }
 
 
+
 .styled-table tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
 }
+
 
 table {
   border-collapse: collapse;
@@ -65,22 +65,40 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 {% block main %}
 <div class=" main-container">
-<div class=" overflow-x:auto;">
+<div class="overflow-x:auto;">
 <table class="styled-table">
     <tr>
         <th>S.No</th>
-        <th>Login Time</th>
-        <th>Logout Time</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Weight</th>
+        <th>Height</th>
+        <th>Systolic_bp</th>
+        <th>Diastolic_bp</th>
+        <th>Cholesterol</th>
+        <th>Blood_glucose</th>
+        <th>Smoking </th>
+        <th>Alcohol</th>
+        <th>Physical_activity</th>
+        <th>Result</th>
+        
     </tr>
     {% for session in sessions %}
     <tr>
-        <td>{{loop.index}}</td>
-        <td>{{session.login_time.strftime("%H:%M %d-%m-%Y")}}</td>
-        {% if session.logout_time %}
-        <td>{{session.logout_time.strftime("%H:%M %d-%m-%Y")}}</td>
-        {% else %}
-        <td>NA</td>
-        {% endif %}
+        <td>{{loop.index}}</td>   
+        <td>{{session.age}}</td>
+        <td>{{session.gender}}</td>
+        <td>{{session.weight}}</td>
+        <td>{{session.height}}</td>
+        <td>{{session.systolic_bp}}</td>
+        <td>{{session.diastolic_bp}}</td>
+        <td>{{session.cholesterol_level}}</td>
+        <td>{{session.blood_glucose_level}}</td>
+        <td>{{session.smoking}}</td>
+        <td>{{session.alcohol}}</td>
+        <td>{{session.physical_activity}}</td>
+        <td>{{session.result}}</td>
+       
     </tr>
     {% endfor %}
 </table>

@@ -8,8 +8,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+    
     <link
       rel="icon"
       href="{{ url_for('static', filename='img/favicon.ico') }}"
@@ -87,7 +86,7 @@
         <a
           class="navbar-brand " 
           href="aboutus"
-          >ABOUT</a
+          >ABOUT US</a
         >
         <button
           class="navbar-toggler"
@@ -119,6 +118,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{{ url_for('appview.session_history') }}">User History</a>
+                <a class="dropdown-item" href="{{ url_for('appview.session_medhistory') }}">Medical History</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ url_for('authview.logout') }}"
                   >Logout</a
@@ -146,6 +146,9 @@
     <footer class="footer">
       <div class="container text-center">
         <span class="text-muted"></span>
+        <div class="copyright">
+        &copy; Copyright <strong><span>DGIN5201 CardioPredict.com™.</span></strong>
+      </div>
       </div>
     </footer>
 

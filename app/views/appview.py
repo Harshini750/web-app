@@ -6,6 +6,7 @@ from werkzeug.utils import redirect
 from controllers.predictioncontroller import PredictionController
 from exceptions import FormValidationError
 from models.userhistory import UserHistory
+from models.medicalrecord import MedicalRecord
 
 appview = Blueprint("appview", __name__)
 
@@ -75,7 +76,8 @@ def predict():
         flash("Something went wrong. Could not make prediction.")
         return redirect(url_for("appview.prediction"))
 
-@appview.route("/session-history")
+@appview.route("/history")
+@login_required
 def session_history():
     try:
         user_history = UserHistory.query.filter_by(user=current_user).all()
@@ -85,3 +87,26 @@ def session_history():
         return render_template("session_history.html", sessions=user_history)
     except:
         print(traceback.format_exc())
+        return render_template(
+        "aboutus.html",
+        title="Cardio Predict | Prediction",
+        page_header="Cardio Predict",
+        )
+
+@appview.route("/medhistory")
+@login_required
+def session_medhistory():
+    try:
+        medhistory = MedicalRecord.query.filter_by(user=current_user).all()
+        
+        # import pdb
+        # pdb.set_trace()
+        print(medhistory)
+        return render_template("medhistory.html", sessions=medhistory)
+    except:
+        print(traceback.format_exc())
+        return render_template(
+        "medhistory.html",
+        title="Cardio Predict | Prediction",
+        page_header="Cardio Predict",
+        )
